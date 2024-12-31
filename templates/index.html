@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ar">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  <title>نظام تسجيل الحضور باستخدام التعرف على الوجه</title>
+  <link rel="icon" type="image/x-icon" href="static/icon3.png">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
+</head>
+
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/"><img src="static/icon3.png" width="35" class="d-inline-block align-top" alt="الشعار">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="تبديل القائمة">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+          <li><h6 style="color: white;">نظام تسجيل الحضور باستخدام التعرف على الوجه</h6></li>
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+        <a href="/"  class="mr-5 mt-2 log"><h5>الرئيسية</h5></a>
+        {% if current_user.is_anonymous %}
+          <a href="/login" class="mr-5 mt-2 log" ><h5>تسجيل الدخول</h5></a>
+          {% else %}
+          <a href="/logout" class="mr-5 mt-2 log"><h5>تسجيل الخروج</h5></a>
+          <h5 class="my-2 my-sm-0" style="color: white;">مرحبًا، {{current_user.username}}</h5>
+          {% endif %}
+      </div>
+    </div>
+  </nav>
+
+  <nav class="links">
+    <ul>
+      <li><a href="https://www.linkedin.com/" target="_blank" class="link"><i
+            class="fab fa-linkedin-in"></i><span>لينكد إن</span></a></li>
+      <li><a href="https://github.com/Mohammed-Alfifi"target="_blank"  class="link"><i class="fab fa-github"></i><span>جيت هب</span></a></li>
+      <li><a href="mohammedalfif4@gmail.com" target="_blank" class="link"><i class="fa fa-envelope"></i><span>البريد الإلكتروني</span></a></li>
+    </ul>
+  </nav>
+
+  <div class="container" style="padding-top: 20vh;">
+
+    <div class="text-right mb-5">
+      <a href="/add" class="btn btn-dark myBtn"><i class="fa fa-user-plus mr-2"></i> إضافة موظف جديد</a>
+    </div>
+    <div class="text-right mb-5">
+      <a href="/encode" class="btn btn-dark myBtn"><i class="fa fa-camera mr-3"></i>التعرف</a>
+    </div>
+    <div class="text-right mb-5">
+      <a href="/AttendanceSheet" class="btn btn-dark myBtn"><i class="fa fa-file-invoice mr-3"></i>كشف الحضور</a>
+    </div>
+    <div class="text-right mb-5">
+      <a href="/stats" class="btn btn-dark myBtn"><i class="fa fa-chart-line mr-3"></i>الإحصائيات</a>
+<!-- أيقونة المساعدة في الزاوية اليمنى السفلى -->
+<div style="position: fixed; bottom: 20px; right: 20px;">
+    <a href="/helpBot" class="btn btn-dark rounded-circle" style="width: 60px; height: 60px; display: flex; align-items: center; justify-content: center;">
+        <i class="fa fa-info-circle" style="font-size: 24px;"></i>
+    </a>
+</div>
+
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
